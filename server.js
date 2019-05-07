@@ -2,11 +2,11 @@ const express = require("express");
 
 const server = express();
 
-const postsRouter = require("./Posts/postsRouter");
+const postsRoutes = require("./Posts/postsRouter");
 
 server.use(express.json());
-server.use("/api/posts", postsRouter);
+server.use("/api/posts", postsRoutes);
 
-server.get('/', (req, res) => res.send("API up and running!")); 
+server.use('/', (req, res) => res.send('API Is Up And Running!'));
 
 module.exports = server;
